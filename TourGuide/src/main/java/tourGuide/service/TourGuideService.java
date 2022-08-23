@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -34,6 +37,7 @@ public class TourGuideService {
 	private final RewardsService rewardsService;
 	private final TripPricer tripPricer = new TripPricer();
 	public final Tracker tracker;
+
 	boolean testMode = true;
 	
 	public TourGuideService(GpsUtil gpsUtil, RewardsService rewardsService) {
@@ -84,11 +88,43 @@ public class TourGuideService {
 	}
 	
 	public VisitedLocation trackUserLocation(User user) {
-		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
-		user.addToVisitedLocations(visitedLocation);
-		rewardsService.calculateRewards(user);
-		return visitedLocation;
+//		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
+//		user.addToVisitedLocations(visitedLocation);
+
+		ExecutorService executorService = Executors.newFixedThreadPool(300);
+		final VisitedLocation[] visitedLocationReturn = new VisitedLocation[1];
+
+		executorService.execute(new Runnable() {
+			@Override
+			public void run() {
+
+				VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
+				user.addToVisitedLocations(visitedLocation);
+
+				rewardsService.calculateRewards(user);
+				visitedLocationReturn[0] = visitedLocation;
+			}
+		});
+		executorService.shutdown();
+		return visitedLocationReturn[0];
 	}
+
+//	public VisitedLocation trackListUserLocation(List<User> userList) throws InterruptedException {
+//		ExecutorService executorService = Executors.newFixedThreadPool(300);
+
+
+//
+//		for (User user: userList) {
+//			Runnable runnable = () -> {
+//				trackUserLocation(user);
+//			};
+//			executorService.execute(runnable);
+//		}
+//		executorService.shutdown();
+//		executorService.awaitTermination(15, TimeUnit.MINUTES);
+//
+//		return;
+//	}
 
 	public List<Attraction> getNearByAttractions(VisitedLocation visitedLocation) {
 		List<Attraction> nearbyAttractions = new ArrayList<>();
