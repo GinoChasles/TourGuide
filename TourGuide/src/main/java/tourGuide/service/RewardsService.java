@@ -10,8 +10,10 @@ import tourGuide.user.User;
 import tourGuide.user.UserReward;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class RewardsService {
@@ -38,6 +40,28 @@ public class RewardsService {
 	}
 	
 	public void calculateRewards(User user) {
+//		ExecutorService executor = Executors.newFixedThreadPool(1000);
+//
+//		List<VisitedLocation> userLocations = user.getVisitedLocations();
+//		CompletableFuture.supplyAsync(() -> {
+//			return gpsUtil.getAttractions(); // attraction
+//		}, executor).thenAccept(attractions -> {
+//			for (int i = 0; i < userLocations.size(); i++) {
+//				VisitedLocation visitedLocation = userLocations.get(i);
+//				for (int j = 0; j < attractions.size(); j++) {
+//					Attraction attraction = attractions.get(j);
+//
+//					if (user.getUserRewards().stream()
+//							.filter(r -> r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
+//						if (nearAttraction(visitedLocation, attraction)) {
+//							user.addUserReward(
+//									new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
+//						}
+//					}
+//				}
+//			}
+//		});
+
 
 		ExecutorService executorService = Executors.newFixedThreadPool(300);
 		executorService.execute(new Runnable() {
@@ -47,9 +71,11 @@ public class RewardsService {
 				List<Attraction> attractions = gpsUtil.getAttractions();
 				for (VisitedLocation visitedLocation : userLocations) {
 					for (Attraction attraction : attractions) {
-						if (user.getUserRewards().stream().filter(r -> r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
+						if (user.getUserRewards().stream().filter(r ->
+								r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
 							if (nearAttraction(visitedLocation, attraction)) {
-								user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
+								user.addUserReward(new UserReward(visitedLocation, attraction,
+										getRewardPoints(attraction, user)));
 							}
 						}
 					}
@@ -57,6 +83,16 @@ public class RewardsService {
 			}
 		});
 		executorService.shutdown();
+
+		try {
+			if (!executorService.awaitTermination(5, TimeUnit.SECONDS)) {
+				executorService.shutdownNow();
+			}
+		} catch (InterruptedException e) {
+			executorService.shutdownNow();
+			Thread.currentThread().interrupt();
+		}
+
 	}
 	
 	public boolean isWithinAttractionProximity(Attraction attraction, Location location) {

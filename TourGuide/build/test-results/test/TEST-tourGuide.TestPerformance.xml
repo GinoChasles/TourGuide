@@ -1,229 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-08-23T17:20:10" hostname="PC_Materiel_net" time="26.032">
+<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-08-29T18:45:18" hostname="PC_Materiel_net" time="545.224">
   <properties/>
-  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="0.335"/>
-  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="25.696"/>
-  <system-out><![CDATA[19:20:10.762 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-19:20:10.769 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-19:20:10.880 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100 internal test users.
-19:20:10.880 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-19:20:10.895 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100 users.
-19:20:10.975 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-19:20:10.975 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeTrackLocation: Time Elapsed: 0 seconds.
-19:20:10.978 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-19:20:10.978 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-19:20:11.200 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 10000 internal test users.
-19:20:11.201 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-19:20:11.204 [pool-402-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 10000 users.
-19:20:32.597 [pool-402-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 21 seconds.
-19:20:32.597 [pool-402-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeGetRewards: Time Elapsed: 25 seconds.
+  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="1.982"/>
+  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="543.241"/>
+  <system-out><![CDATA[20:45:18.604 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:45:18.615 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:45:18.832 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5000 internal test users.
+20:45:18.833 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:45:18.850 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:45:20.261 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 1 seconds.
+20:45:20.261 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeTrackLocation: Time Elapsed: 1 seconds.
+20:45:20.450 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:45:20.450 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:45:20.494 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5000 internal test users.
+20:45:20.495 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:45:20.496 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:45:21.042 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:45:21.042 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:45:31.043 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:46:18.440 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 47 seconds.
+20:46:18.441 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:46:28.442 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:46:29.182 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:46:29.183 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:46:39.184 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:46:39.774 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:46:39.774 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:46:49.775 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:46:50.329 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:46:50.330 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:47:00.330 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:47:00.827 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:47:00.827 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:47:10.828 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:47:11.638 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:47:11.638 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:47:21.639 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:47:22.153 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:47:22.153 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:47:32.153 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:47:32.789 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:47:32.789 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:47:42.789 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:47:43.352 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:47:43.353 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:47:53.353 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:47:53.983 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:47:53.983 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:48:03.983 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:48:04.719 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:48:04.719 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:48:14.720 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:48:15.263 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:48:15.263 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:48:25.263 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:48:25.824 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:48:25.825 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:48:35.825 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:48:36.376 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:48:36.376 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:48:46.377 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:48:47.001 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:48:47.001 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:48:57.001 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:48:57.576 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:48:57.576 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:49:07.576 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:49:08.126 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:49:08.126 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:49:18.126 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:49:18.650 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:49:18.650 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:49:28.650 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:49:29.213 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:49:29.213 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:49:39.214 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:49:39.905 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:49:39.905 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:49:49.905 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:49:50.414 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:49:50.414 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:50:00.415 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:50:00.941 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:50:00.942 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:50:10.943 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:50:11.515 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:50:11.515 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:50:21.516 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:50:22.278 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:50:22.278 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:50:32.278 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:50:32.965 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:50:32.965 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:50:42.966 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:50:43.546 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:50:43.546 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:50:53.547 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:50:54.112 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:50:54.112 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:51:04.113 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:51:04.682 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:51:04.683 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:51:14.684 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:51:15.201 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:51:15.202 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:51:25.203 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:51:25.752 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:51:25.752 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:51:35.753 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:51:36.312 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:51:36.312 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:51:46.313 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:51:46.950 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:51:46.951 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:51:56.951 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:51:57.631 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:51:57.631 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:52:07.631 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:52:08.195 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:52:08.195 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:52:18.197 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:52:18.776 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:52:18.776 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:52:28.777 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:52:29.402 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:52:29.402 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:52:39.403 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:52:40.011 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:52:40.011 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:52:50.011 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:52:50.552 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:52:50.552 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:53:00.552 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:53:01.092 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:53:01.092 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:53:11.092 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:53:11.679 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:53:11.679 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:53:21.679 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:53:22.228 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:53:22.228 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:53:32.229 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:53:32.799 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:53:32.799 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:53:42.799 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:53:43.368 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:53:43.368 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:53:53.368 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:53:54.014 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:53:54.014 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:54:04.014 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:54:04.619 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:54:04.619 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+20:54:14.619 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+20:54:15.168 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+20:54:15.168 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeGetRewards: Time Elapsed: 543 seconds.
 ]]></system-out>
-  <system-err><![CDATA[Aug 23, 2022 7:20:10 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+  <system-err><![CDATA[Aug 29, 2022 8:45:18 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
 INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
-Exception in thread "pool-382-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-974-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1091-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-946-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1113-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-909-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-872-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1166-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-821-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1020-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1064-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1018-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1017-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1661-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-952-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1044-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1156-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1041-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-870-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1114-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1074-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1094-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1053-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-965-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-964-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1051-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1144-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1205-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Exception in thread "pool-1249-thread-1" java.util.ConcurrentModificationException
-	at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911)
-	at java.util.ArrayList$Itr.next(ArrayList.java:861)
-	at tourGuide.service.RewardsService$1.run(RewardsService.java:48)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
 ]]></system-err>
 </testsuite>

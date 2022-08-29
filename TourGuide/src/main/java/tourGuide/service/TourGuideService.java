@@ -2,13 +2,7 @@ package tourGuide.service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -90,6 +84,7 @@ public class TourGuideService {
 	public VisitedLocation trackUserLocation(User user) {
 //		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
 //		user.addToVisitedLocations(visitedLocation);
+		Locale.setDefault(Locale.US);
 
 		ExecutorService executorService = Executors.newFixedThreadPool(300);
 		final VisitedLocation[] visitedLocationReturn = new VisitedLocation[1];
