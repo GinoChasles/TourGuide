@@ -1,164 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-08-29T18:45:18" hostname="PC_Materiel_net" time="545.224">
+<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-16T12:44:15" hostname="PC_Materiel_net" time="148.095">
   <properties/>
-  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="1.982"/>
-  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="543.241"/>
-  <system-out><![CDATA[20:45:18.604 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:45:18.615 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:45:18.832 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5000 internal test users.
-20:45:18.833 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:45:18.850 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:45:20.261 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 1 seconds.
-20:45:20.261 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="1.948"/>
+  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="146.146"/>
+  <system-out><![CDATA[14:44:16.176 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+14:44:16.182 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+14:44:16.387 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5000 internal test users.
+14:44:16.387 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+14:44:16.408 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:44:17.903 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 1 seconds.
+14:44:17.903 [pool-2-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
 highVolumeTrackLocation: Time Elapsed: 1 seconds.
-20:45:20.450 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-20:45:20.450 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-20:45:20.494 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5000 internal test users.
-20:45:20.495 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-20:45:20.496 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:45:21.042 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:45:21.042 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:45:31.043 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:46:18.440 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 47 seconds.
-20:46:18.441 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:46:28.442 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:46:29.182 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:46:29.183 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:46:39.184 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:46:39.774 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:46:39.774 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:46:49.775 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:46:50.329 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:46:50.330 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:47:00.330 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:47:00.827 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:47:00.827 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:47:10.828 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:47:11.638 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:47:11.638 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:47:21.639 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:47:22.153 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:47:22.153 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:47:32.153 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:47:32.789 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:47:32.789 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:47:42.789 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:47:43.352 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:47:43.353 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:47:53.353 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:47:53.983 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:47:53.983 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:48:03.983 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:48:04.719 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:48:04.719 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:48:14.720 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:48:15.263 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:48:15.263 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:48:25.263 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:48:25.824 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:48:25.825 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:48:35.825 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:48:36.376 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:48:36.376 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:48:46.377 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:48:47.001 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:48:47.001 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:48:57.001 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:48:57.576 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:48:57.576 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:49:07.576 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:49:08.126 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:49:08.126 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:49:18.126 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:49:18.650 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:49:18.650 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:49:28.650 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:49:29.213 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:49:29.213 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:49:39.214 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:49:39.905 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:49:39.905 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:49:49.905 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:49:50.414 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:49:50.414 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:50:00.415 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:50:00.941 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:50:00.942 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:50:10.943 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:50:11.515 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:50:11.515 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:50:21.516 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:50:22.278 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:50:22.278 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:50:32.278 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:50:32.965 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:50:32.965 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:50:42.966 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:50:43.546 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:50:43.546 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:50:53.547 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:50:54.112 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:50:54.112 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:51:04.113 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:51:04.682 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:51:04.683 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:51:14.684 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:51:15.201 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:51:15.202 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:51:25.203 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:51:25.752 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:51:25.752 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:51:35.753 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:51:36.312 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:51:36.312 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:51:46.313 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:51:46.950 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:51:46.951 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:51:56.951 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:51:57.631 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:51:57.631 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:52:07.631 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:52:08.195 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:52:08.195 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:52:18.197 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:52:18.776 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:52:18.776 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:52:28.777 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:52:29.402 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:52:29.402 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:52:39.403 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:52:40.011 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:52:40.011 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:52:50.011 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:52:50.552 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:52:50.552 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:53:00.552 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:53:01.092 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:53:01.092 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:53:11.092 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:53:11.679 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:53:11.679 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:53:21.679 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:53:22.228 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:53:22.228 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:53:32.229 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:53:32.799 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:53:32.799 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:53:42.799 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:53:43.368 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:53:43.368 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:53:53.368 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:53:54.014 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:53:54.014 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:54:04.014 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:54:04.619 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:54:04.619 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-20:54:14.619 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
-20:54:15.168 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
-20:54:15.168 [pool-11383-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeGetRewards: Time Elapsed: 543 seconds.
+14:44:17.936 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+14:44:17.936 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+14:44:18.040 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 5000 internal test users.
+14:44:18.040 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+14:44:18.042 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:44:18.561 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:44:18.561 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:44:28.561 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:45:00.549 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 31 seconds.
+14:45:00.549 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:45:10.550 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:45:11.045 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:45:11.046 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:45:21.046 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:45:21.470 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:45:21.471 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:45:31.470 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:45:31.959 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:45:31.959 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:45:41.958 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:45:42.371 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:45:42.372 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:45:52.372 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:45:52.826 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:45:52.826 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:46:02.825 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:46:03.188 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:46:03.188 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:46:13.188 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:46:13.550 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:46:13.550 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:46:23.550 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:46:23.891 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:46:23.892 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+14:46:33.892 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 5000 users.
+14:46:34.230 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 0 seconds.
+14:46:34.230 [pool-11364-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeGetRewards: Time Elapsed: 146 seconds.
 ]]></system-out>
-  <system-err><![CDATA[Aug 29, 2022 8:45:18 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+  <system-err><![CDATA[Sep 16, 2022 2:44:16 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
 INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
 ]]></system-err>
 </testsuite>
