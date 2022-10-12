@@ -15,7 +15,7 @@ import java.util.concurrent.*;
 @Service
 public class RewardsService {
     private static final double STATUTE_MILES_PER_NAUTICAL_MILE = 1.15077945;
-	ExecutorService executor =  Executors.newFixedThreadPool(1000);
+	ExecutorService executor =  Executors.newFixedThreadPool(10000);
 
 	// proximity in miles
     private int defaultProximityBuffer = 10;
@@ -39,8 +39,7 @@ public class RewardsService {
 	}
 	
 	public void calculateRewards(User user) {
-
-		ThreadPoolExecutor executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(200);
+		ExecutorService executorService = Executors.newFixedThreadPool(300);
 		executorService.execute(new Runnable() {
 			@Override
 			public void run() {
@@ -73,8 +72,42 @@ public class RewardsService {
 			Thread.currentThread().interrupt();
 		}
 
+		//-------------------------------------------------------
+//		ThreadPoolExecutor executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(200);
+//		executorService.execute(new Runnable() {
+//			@Override
+//			public void run() {
+//				List<VisitedLocation> userLocations = new CopyOnWriteArrayList<>(user.getVisitedLocations());
+//				List<Attraction> attractions = new CopyOnWriteArrayList<>(gpsUtil.getAttractions());
+//
+//
+//
+//
+//				for(VisitedLocation visitedLocation : userLocations) {
+//					for(Attraction attraction : attractions) {
+//						if(user.getUserRewards().stream().filter(r -> r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
+//							if(nearAttraction(visitedLocation, attraction)) {
+//								user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
+//							}
+//						}
+//					}
+//				}
+//
+//			}
+//		});
+//
+//		executorService.shutdown();
+//		try {
+//			if (!executorService.awaitTermination(5, TimeUnit.SECONDS)) {
+//				executorService.shutdownNow();
+//			}
+//		} catch (InterruptedException e) {
+//			executorService.shutdownNow();
+//			Thread.currentThread().interrupt();
+//		}
 
 
+//--------------------------------------------------
 
 
 //		List<VisitedLocation> userLocations = user.getVisitedLocations();

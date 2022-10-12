@@ -1,28 +1,26 @@
 package tourGuide.service;
 
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import gpsUtil.GpsUtil;
 import gpsUtil.location.Attraction;
 import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import tourGuide.helper.InternalTestHelper;
 import tourGuide.tracker.Tracker;
 import tourGuide.user.User;
 import tourGuide.user.UserReward;
 import tripPricer.Provider;
 import tripPricer.TripPricer;
+
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 public class TourGuideService {
@@ -84,11 +82,10 @@ public class TourGuideService {
 	public VisitedLocation trackUserLocation(User user) {
 //		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
 //		user.addToVisitedLocations(visitedLocation);
+
 		Locale.setDefault(Locale.US);
-
-		ExecutorService executorService = Executors.newFixedThreadPool(300);
 		final VisitedLocation[] visitedLocationReturn = new VisitedLocation[1];
-
+		ExecutorService executorService = Executors.newFixedThreadPool(300);
 		executorService.execute(new Runnable() {
 			@Override
 			public void run() {
@@ -102,24 +99,9 @@ public class TourGuideService {
 		});
 		executorService.shutdown();
 		return visitedLocationReturn[0];
+
 	}
 
-//	public VisitedLocation trackListUserLocation(List<User> userList) throws InterruptedException {
-//		ExecutorService executorService = Executors.newFixedThreadPool(300);
-
-
-//
-//		for (User user: userList) {
-//			Runnable runnable = () -> {
-//				trackUserLocation(user);
-//			};
-//			executorService.execute(runnable);
-//		}
-//		executorService.shutdown();
-//		executorService.awaitTermination(15, TimeUnit.MINUTES);
-//
-//		return;
-//	}
 
 	public List<Attraction> getNearByAttractions(VisitedLocation visitedLocation) {
 		List<Attraction> nearbyAttractions = new ArrayList<>();
@@ -138,6 +120,31 @@ public class TourGuideService {
 		        tracker.stopTracking();
 		      } 
 		    }); 
+	}
+
+	public Map<String, Location> getAllCurrentLocations() {
+		Map<String, Location> result = new HashMap<>();
+
+		List<User> allUsers = getAllUsers();
+		for(User user : allUsers) {
+			result.put(user.getUserId().toString(), user.getLastVisitedLocation().location);
+		}
+		return result;
+	}
+	Comparator<Double> reverseComparator = new Comparator<Double>() {
+		@Override public int compare(Double i1, Double i2) {
+			return i2.compareTo(i1);
+		}
+	};
+	public List<Attraction> getFiveNearestAttraction(VisitedLocation visitedLocation){
+
+
+		List<Attraction> result = new ArrayList<>();
+		List<Attraction> getNearByAttractions = getNearByAttractions(visitedLocation);
+		List<Attraction> sortedList = getNearByAttractions.stream().sorted(Comparator.comparingDouble(o -> rewardsService.getDistance(visitedLocation.location, o))).collect(Collectors.toList());
+		result = sortedList.subList(0,4);
+
+		return result;
 	}
 	
 	/**********************************************************************************
