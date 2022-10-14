@@ -15,20 +15,20 @@ import java.util.concurrent.*;
 @Service
 public class RewardsService {
     private static final double STATUTE_MILES_PER_NAUTICAL_MILE = 1.15077945;
-<span class="fc" id="L18">	ExecutorService executor =  Executors.newFixedThreadPool(10000);</span>
+<span class="nc" id="L18">	ExecutorService executor =  Executors.newFixedThreadPool(5);</span>
 
 	// proximity in miles
-<span class="fc" id="L21">    private int defaultProximityBuffer = 10;</span>
-<span class="fc" id="L22">	private int proximityBuffer = defaultProximityBuffer;</span>
-<span class="fc" id="L23">	private int attractionProximityRange = 200;</span>
+<span class="nc" id="L21">    private int defaultProximityBuffer = 10;</span>
+<span class="nc" id="L22">	private int proximityBuffer = defaultProximityBuffer;</span>
+<span class="nc" id="L23">	private int attractionProximityRange = 200;</span>
 	private final GpsUtil gpsUtil;
 	private final RewardCentral rewardsCentral;
 
 
-<span class="fc" id="L28">	public RewardsService(GpsUtil gpsUtil, RewardCentral rewardCentral) {</span>
-<span class="fc" id="L29">		this.gpsUtil = gpsUtil;</span>
-<span class="fc" id="L30">		this.rewardsCentral = rewardCentral;</span>
-<span class="fc" id="L31">	}</span>
+<span class="nc" id="L28">	public RewardsService(GpsUtil gpsUtil, RewardCentral rewardCentral) {</span>
+<span class="nc" id="L29">		this.gpsUtil = gpsUtil;</span>
+<span class="nc" id="L30">		this.rewardsCentral = rewardCentral;</span>
+<span class="nc" id="L31">	}</span>
 	
 	public void setProximityBuffer(int proximityBuffer) {
 <span class="nc" id="L34">		this.proximityBuffer = proximityBuffer;</span>
@@ -39,162 +39,68 @@ public class RewardsService {
 <span class="nc" id="L39">	}</span>
 	
 	public void calculateRewards(User user) {
-<span class="fc" id="L42">		ExecutorService executorService = Executors.newFixedThreadPool(300);</span>
-<span class="fc" id="L43">		executorService.execute(new Runnable() {</span>
+<span class="nc" id="L42">		ExecutorService executorService = Executors.newFixedThreadPool(5);</span>
+<span class="nc" id="L43">		executorService.execute(new Runnable() {</span>
 			@Override
 			public void run() {
-<span class="fc" id="L46">				List&lt;VisitedLocation&gt; userLocations = new CopyOnWriteArrayList&lt;&gt;(user.getVisitedLocations());</span>
-<span class="fc" id="L47">				List&lt;Attraction&gt; attractions = new CopyOnWriteArrayList&lt;&gt;(gpsUtil.getAttractions());</span>
+<span class="nc" id="L46">				List&lt;VisitedLocation&gt; userLocations = new CopyOnWriteArrayList&lt;&gt;(user.getVisitedLocations());</span>
+<span class="nc" id="L47">				List&lt;Attraction&gt; attractions = new CopyOnWriteArrayList&lt;&gt;(gpsUtil.getAttractions());</span>
 
 
 
 
-<span class="fc bfc" id="L52" title="All 2 branches covered.">				for(VisitedLocation visitedLocation : userLocations) {</span>
-<span class="fc bfc" id="L53" title="All 2 branches covered.">					for(Attraction attraction : attractions) {</span>
-<span class="fc bfc" id="L54" title="All 2 branches covered.">						if(user.getUserRewards().stream().filter(r -&gt; r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">							if(nearAttraction(visitedLocation, attraction)) {</span>
-<span class="fc" id="L56">								user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">				for(VisitedLocation visitedLocation : userLocations) {</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">					for(Attraction attraction : attractions) {</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">						if(user.getUserRewards().stream().filter(r -&gt; r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">							if(nearAttraction(visitedLocation, attraction)) {</span>
+<span class="nc" id="L56">								user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));</span>
 							}
 						}
-<span class="fc" id="L59">					}</span>
-<span class="fc" id="L60">				}</span>
+<span class="nc" id="L59">					}</span>
+<span class="nc" id="L60">				}</span>
 
-<span class="fc" id="L62">			}</span>
+<span class="nc" id="L62">			}</span>
 		});
 
-<span class="fc" id="L65">		executorService.shutdown();</span>
+<span class="nc" id="L65">		executorService.shutdown();</span>
 		try {
-<span class="fc bfc" id="L67" title="All 2 branches covered.">			if (!executorService.awaitTermination(5, TimeUnit.SECONDS)) {</span>
-<span class="fc" id="L68">				executorService.shutdownNow();</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">			if (!executorService.awaitTermination(5, TimeUnit.SECONDS)) {</span>
+<span class="nc" id="L68">				executorService.shutdownNow();</span>
 			}
 <span class="nc" id="L70">		} catch (InterruptedException e) {</span>
 <span class="nc" id="L71">			executorService.shutdownNow();</span>
 <span class="nc" id="L72">			Thread.currentThread().interrupt();</span>
-<span class="fc" id="L73">		}</span>
-
-		//-------------------------------------------------------
-//		ThreadPoolExecutor executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(200);
-//		executorService.execute(new Runnable() {
-//			@Override
-//			public void run() {
-//				List&lt;VisitedLocation&gt; userLocations = new CopyOnWriteArrayList&lt;&gt;(user.getVisitedLocations());
-//				List&lt;Attraction&gt; attractions = new CopyOnWriteArrayList&lt;&gt;(gpsUtil.getAttractions());
-//
-//
-//
-//
-//				for(VisitedLocation visitedLocation : userLocations) {
-//					for(Attraction attraction : attractions) {
-//						if(user.getUserRewards().stream().filter(r -&gt; r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
-//							if(nearAttraction(visitedLocation, attraction)) {
-//								user.addUserReward(new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
-//							}
-//						}
-//					}
-//				}
-//
-//			}
-//		});
-//
-//		executorService.shutdown();
-//		try {
-//			if (!executorService.awaitTermination(5, TimeUnit.SECONDS)) {
-//				executorService.shutdownNow();
-//			}
-//		} catch (InterruptedException e) {
-//			executorService.shutdownNow();
-//			Thread.currentThread().interrupt();
-//		}
-
-
-//--------------------------------------------------
-
-
-//		List&lt;VisitedLocation&gt; userLocations = user.getVisitedLocations();
-//		CompletableFuture.supplyAsync(() -&gt; {
-//			return gpsUtil.getAttractions(); // attraction
-//		}, executor).thenAccept(attractions -&gt; {
-//			for (int i = 0; i &lt; userLocations.size(); i++) {
-//				VisitedLocation visitedLocation = userLocations.get(i);
-//				for (int j = 0; j &lt; attractions.size(); j++) {
-//					Attraction attraction = attractions.get(j);
-//
-//					if (user.getUserRewards().stream()
-//							.filter(r -&gt; r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
-//						if (nearAttraction(visitedLocation, attraction)) {
-//							user.addUserReward(
-//									new UserReward(visitedLocation, attraction, getRewardPoints(attraction, user)));
-//						}
-//					}
-//				}
-//			}
-//		});
-
-
-//		ExecutorService executorService = Executors.newFixedThreadPool(300);
-//		executorService.execute(new Runnable() {
-//			@Override
-//			public void run() {
-//				List&lt;VisitedLocation&gt; userLocations = user.getVisitedLocations();
-//				List&lt;Attraction&gt; attractions = gpsUtil.getAttractions();
-//				CopyOnWriteArrayList&lt;VisitedLocation&gt; userLocations2= new CopyOnWriteArrayList&lt;&gt;();
-//				CopyOnWriteArrayList&lt;Attraction&gt; attractions2 = new CopyOnWriteArrayList&lt;&gt;();
-//				userLocations2.addAll(userLocations);
-//				attractions2.addAll(attractions);
-//				for (VisitedLocation visitedLocation : userLocations2) {
-//					for (Attraction attraction : attractions2) {
-//						if (user.getUserRewards().stream().filter(r -&gt;
-//								r.attraction.attractionName.equals(attraction.attractionName)).count() == 0) {
-//							if (nearAttraction(visitedLocation, attraction)) {
-//								user.addUserReward(new UserReward(visitedLocation, attraction,
-//										getRewardPoints(attraction, user)));
-//							}
-//						}
-//					}
-//				}
-//			}
-//		});
-//		executorService.shutdown();
-//
-//		try {
-//			if (!executorService.awaitTermination(5, TimeUnit.SECONDS)) {
-//				executorService.shutdownNow();
-//			}
-//		} catch (InterruptedException e) {
-//			executorService.shutdownNow();
-//			Thread.currentThread().interrupt();
-//		}
-
-<span class="fc" id="L168">	}</span>
+<span class="nc" id="L73">		}</span>
+<span class="nc" id="L74">	}</span>
 	
 	public boolean isWithinAttractionProximity(Attraction attraction, Location location) {
-<span class="nc bnc" id="L171" title="All 2 branches missed.">		return getDistance(attraction, location) &gt; attractionProximityRange ? false : true;</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">		return getDistance(attraction, location) &gt; attractionProximityRange ? false : true;</span>
 	}
 	
 	private boolean nearAttraction(VisitedLocation visitedLocation, Attraction attraction) {
-<span class="fc bfc" id="L175" title="All 2 branches covered.">		return getDistance(attraction, visitedLocation.location) &gt; proximityBuffer ? false : true;</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">		return getDistance(attraction, visitedLocation.location) &gt; proximityBuffer ? false : true;</span>
 	}
 	
 	private int getRewardPoints(Attraction attraction, User user) {
-<span class="fc" id="L179">		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());</span>
+<span class="nc" id="L85">		return rewardsCentral.getAttractionRewardPoints(attraction.attractionId, user.getUserId());</span>
 	}
 	
 	public double getDistance(Location loc1, Location loc2) {
-<span class="fc" id="L183">        double lat1 = Math.toRadians(loc1.latitude);</span>
-<span class="fc" id="L184">        double lon1 = Math.toRadians(loc1.longitude);</span>
-<span class="fc" id="L185">        double lat2 = Math.toRadians(loc2.latitude);</span>
-<span class="fc" id="L186">        double lon2 = Math.toRadians(loc2.longitude);</span>
+<span class="nc" id="L89">        double lat1 = Math.toRadians(loc1.latitude);</span>
+<span class="nc" id="L90">        double lon1 = Math.toRadians(loc1.longitude);</span>
+<span class="nc" id="L91">        double lat2 = Math.toRadians(loc2.latitude);</span>
+<span class="nc" id="L92">        double lon2 = Math.toRadians(loc2.longitude);</span>
 
-<span class="fc" id="L188">        double angle = Math.acos(Math.sin(lat1) * Math.sin(lat2)</span>
-<span class="fc" id="L189">                               + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));</span>
+<span class="nc" id="L94">        double angle = Math.acos(Math.sin(lat1) * Math.sin(lat2)</span>
+<span class="nc" id="L95">                               + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));</span>
 
-<span class="fc" id="L191">        double nauticalMiles = 60 * Math.toDegrees(angle);</span>
-<span class="fc" id="L192">        double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;</span>
-<span class="fc" id="L193">        return statuteMiles;</span>
+<span class="nc" id="L97">        double nauticalMiles = 60 * Math.toDegrees(angle);</span>
+<span class="nc" id="L98">        double statuteMiles = STATUTE_MILES_PER_NAUTICAL_MILE * nauticalMiles;</span>
+<span class="nc" id="L99">        return statuteMiles;</span>
 	}
 
 	public ExecutorService getExecutor() {
-<span class="nc" id="L197">		return executor;</span>
+<span class="nc" id="L103">		return executor;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
