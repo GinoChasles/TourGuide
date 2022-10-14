@@ -6,7 +6,10 @@ import gpsUtil.location.Location;
 import gpsUtil.location.VisitedLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import rewardCentral.RewardCentral;
+import tourGuide.dto.NearbyAttraction;
 import tourGuide.helper.InternalTestHelper;
 import tourGuide.tracker.Tracker;
 import tourGuide.user.User;
@@ -29,14 +32,16 @@ public class TourGuideService {
 	private final RewardsService rewardsService;
 	private final TripPricer tripPricer = new TripPricer();
 	public final Tracker tracker;
+	@Autowired
+	private RewardCentral rewardCentral;
 
 	boolean testMode = true;
-	
+
 	public TourGuideService(GpsUtil gpsUtil, RewardsService rewardsService) {
 		this.gpsUtil = gpsUtil;
 		this.rewardsService = rewardsService;
-		
-		if(testMode) {
+
+		if (testMode) {
 			logger.info("TestMode enabled");
 			logger.debug("Initializing users");
 			initializeInternalUsers();
@@ -105,21 +110,41 @@ public class TourGuideService {
 
 	public List<Attraction> getNearByAttractions(VisitedLocation visitedLocation) {
 		List<Attraction> nearbyAttractions = new ArrayList<>();
-		for(Attraction attraction : gpsUtil.getAttractions()) {
-			if(rewardsService.isWithinAttractionProximity(attraction, visitedLocation.location)) {
+		for (Attraction attraction : gpsUtil.getAttractions()) {
+			if (rewardsService.isWithinAttractionProximity(attraction, visitedLocation.location)) {
 				nearbyAttractions.add(attraction);
 			}
 		}
-		
+
 		return nearbyAttractions;
 	}
-	
+
+
+	public List<NearbyAttraction> getNearbyAttractions(VisitedLocation visitedLocation) {
+		List<NearbyAttraction> result = new ArrayList<>();
+		List<Attraction> fiveClosestAttractions = getFiveNearestAttraction(visitedLocation);
+
+		for (Attraction attraction : fiveClosestAttractions) {
+			Location location = new Location(attraction.latitude, attraction.longitude);
+			NearbyAttraction nearbyAttraction = new NearbyAttraction();
+			nearbyAttraction.setAttractionName(attraction.attractionName);
+			nearbyAttraction.setAttractionLocation(location);
+			nearbyAttraction.setAttractionRewardPoints(rewardCentral.getAttractionRewardPoints(attraction.attractionId, visitedLocation.userId));
+			nearbyAttraction.setDistance(rewardsService.getDistance(visitedLocation.location, attraction));
+			nearbyAttraction.setUserLocation(visitedLocation.location);
+
+			result.add(nearbyAttraction);
+		}
+
+		return result;
+	}
+
 	private void addShutDownHook() {
-		Runtime.getRuntime().addShutdownHook(new Thread() { 
-		      public void run() {
-		        tracker.stopTracking();
-		      } 
-		    }); 
+		Runtime.getRuntime().addShutdownHook(new Thread() {
+			public void run() {
+				tracker.stopTracking();
+			}
+		});
 	}
 
 	public Map<String, Location> getAllCurrentLocations() {

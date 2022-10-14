@@ -1,4 +1,4 @@
-package tourGuide.controller;
+package tourGuide;
 
 import java.util.List;
 
@@ -43,7 +43,8 @@ public class TourGuideController {
     @RequestMapping("/getNearbyAttractions") 
     public String getNearbyAttractions(@RequestParam String userName) {
     	VisitedLocation visitedLocation = tourGuideService.getUserLocation(getUser(userName));
-    	return JsonStream.serialize(tourGuideService.getNearByAttractions(visitedLocation));
+//    	return JsonStream.serialize(tourGuideService.getNearByAttractions(visitedLocation));
+    	return JsonStream.serialize(tourGuideService.getNearbyAttractions(visitedLocation));
     }
     
     @RequestMapping("/getRewards") 
