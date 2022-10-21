@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tourGuide.TestPerformance" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-14T09:18:41" hostname="PC_Materiel_net" time="491.55">
+<testsuite name="tourGuide.TestPerformance" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-17T18:46:03" hostname="PC_Materiel_net" time="817.813">
   <properties/>
-  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="491.55"/>
-  <system-out><![CDATA[11:18:41.665 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
-11:18:41.699 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
-11:18:44.020 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100000 internal test users.
-11:18:44.020 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
-11:18:44.159 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100000 users.
-11:26:52.844 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 488 seconds.
-11:26:52.845 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
-highVolumeTrackLocation: Time Elapsed: 488 seconds.
+  <testcase name="highVolumeTrackLocation" classname="tourGuide.TestPerformance" time="423.422"/>
+  <testcase name="highVolumeGetRewards" classname="tourGuide.TestPerformance" time="394.391"/>
+  <system-out><![CDATA[20:46:03.937 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:46:03.951 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:46:05.118 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100000 internal test users.
+20:46:05.118 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:46:05.164 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100000 users.
+20:53:05.582 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 420 seconds.
+20:53:05.582 [pool-1-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeTrackLocation: Time Elapsed: 421 seconds.
+20:53:07.155 [Test worker] INFO tourGuide.service.TourGuideService - TestMode enabled
+20:53:07.155 [Test worker] DEBUG tourGuide.service.TourGuideService - Initializing users
+20:53:07.623 [Test worker] DEBUG tourGuide.service.TourGuideService - Created 100000 internal test users.
+20:53:07.623 [Test worker] DEBUG tourGuide.service.TourGuideService - Finished initializing users
+20:53:07.645 [pool-394426-thread-1] DEBUG tourGuide.tracker.Tracker - Begin Tracker. Tracking 100000 users.
+20:56:49.417 [pool-394426-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker Time Elapsed: 221 seconds.
+20:56:49.417 [pool-394426-thread-1] DEBUG tourGuide.tracker.Tracker - Tracker sleeping
+highVolumeGetRewards: Time Elapsed: 394 seconds.
 ]]></system-out>
-  <system-err><![CDATA[Oct 14, 2022 11:18:41 AM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
+  <system-err><![CDATA[Oct 17, 2022 8:46:04 PM org.javamoney.moneta.DefaultMonetaryContextFactory createMonetaryContextNonNullConfig
 INFO: Using custom MathContext: precision=256, roundingMode=HALF_EVEN
 ]]></system-err>
 </testsuite>

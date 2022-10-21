@@ -156,11 +156,7 @@ public class TourGuideService {
 		}
 		return result;
 	}
-	Comparator<Double> reverseComparator = new Comparator<Double>() {
-		@Override public int compare(Double i1, Double i2) {
-			return i2.compareTo(i1);
-		}
-	};
+
 	public List<Attraction> getFiveNearestAttraction(VisitedLocation visitedLocation){
 
 
