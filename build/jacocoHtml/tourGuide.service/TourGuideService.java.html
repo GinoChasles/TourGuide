@@ -194,22 +194,26 @@ public class TourGuideService {
 <span class="fc" id="L194">			user.addToVisitedLocations(new VisitedLocation(user.getUserId(), new Location(generateRandomLatitude(), generateRandomLongitude()), getRandomTime()));</span>
 <span class="fc" id="L195">		});</span>
 <span class="fc" id="L196">	}</span>
+
+	public boolean checkIfUserNameExists(String username) {
+<span class="nc bnc" id="L199" title="All 2 branches missed.">		return internalUserMap.containsKey(username) ? true : false;</span>
+	}
 	
 	private double generateRandomLongitude() {
-<span class="fc" id="L199">		double leftLimit = -180;</span>
-<span class="fc" id="L200">	    double rightLimit = 180;</span>
-<span class="fc" id="L201">	    return leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);</span>
+<span class="fc" id="L203">		double leftLimit = -180;</span>
+<span class="fc" id="L204">	    double rightLimit = 180;</span>
+<span class="fc" id="L205">	    return leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);</span>
 	}
 	
 	private double generateRandomLatitude() {
-<span class="fc" id="L205">		double leftLimit = -85.05112878;</span>
-<span class="fc" id="L206">	    double rightLimit = 85.05112878;</span>
-<span class="fc" id="L207">	    return leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);</span>
+<span class="fc" id="L209">		double leftLimit = -85.05112878;</span>
+<span class="fc" id="L210">	    double rightLimit = 85.05112878;</span>
+<span class="fc" id="L211">	    return leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);</span>
 	}
 	
 	private Date getRandomTime() {
-<span class="fc" id="L211">		LocalDateTime localDateTime = LocalDateTime.now().minusDays(new Random().nextInt(30));</span>
-<span class="fc" id="L212">	    return Date.from(localDateTime.toInstant(ZoneOffset.UTC));</span>
+<span class="fc" id="L215">		LocalDateTime localDateTime = LocalDateTime.now().minusDays(new Random().nextInt(30));</span>
+<span class="fc" id="L216">	    return Date.from(localDateTime.toInstant(ZoneOffset.UTC));</span>
 	}
 	
 }

@@ -3,19 +3,28 @@
 import com.jsoniter.output.JsonStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import tourGuide.exceptions.UserNameException;
+import tourGuide.exceptions.UserPreferencesException;
 import tourGuide.service.UserService;
 import tourGuide.user.User;
 import tourGuide.user.UserPreferences;
 
 @RestController
-<span class="nc" id="L11">public class UserController {</span>
+<span class="nc" id="L13">public class UserController {</span>
     @Autowired
     private UserService userService;
 
 
     @PutMapping(&quot;/setUserPreferences&quot;)
-    public String setUserPreferences(@RequestParam String username, @RequestBody UserPreferences userPreferences) {
-<span class="nc" id="L18">        return JsonStream.serialize(userService.setUserPreferences(username, userPreferences));</span>
+    public String setUserPreferences(@RequestParam String username, @RequestBody UserPreferences userPreferences) throws UserNameException, UserPreferencesException {
+<span class="nc bnc" id="L20" title="All 2 branches missed.">        if(userPreferences == null) {</span>
+<span class="nc" id="L21">            throw new UserPreferencesException();</span>
+        }
+<span class="nc bnc" id="L23" title="All 2 branches missed.">        if(!userService.getUserNameExist(username)) {</span>
+<span class="nc" id="L24">            throw new UserNameException(username);</span>
+        }
+
+<span class="nc" id="L27">        return JsonStream.serialize(userService.setUserPreferences(username, userPreferences));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
