@@ -194,6 +194,10 @@ public class TourGuideService {
 			user.addToVisitedLocations(new VisitedLocation(user.getUserId(), new Location(generateRandomLatitude(), generateRandomLongitude()), getRandomTime()));
 		});
 	}
+
+	public boolean checkIfUserNameExists(String username) {
+		return internalUserMap.containsKey(username) ? true : false;
+	}
 	
 	private double generateRandomLongitude() {
 		double leftLimit = -180;

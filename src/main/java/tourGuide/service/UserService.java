@@ -19,4 +19,8 @@ public class UserService {
         return user;
     }
 
+    public boolean getUserNameExist(String username) {
+        return tourGuideService.checkIfUserNameExists(username);
+    }
+
 }
