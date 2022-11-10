@@ -9,12 +9,24 @@ import tourGuide.service.UserService;
 import tourGuide.user.User;
 import tourGuide.user.UserPreferences;
 
+/**
+ * The type User controller.
+ */
 @RestController
 public class UserController {
     @Autowired
     private UserService userService;
 
 
+    /**
+     * Sets user preferences.
+     *
+     * @param username        the username
+     * @param userPreferences the user preferences
+     * @return the user preferences
+     * @throws UserNameException        the user name exception
+     * @throws UserPreferencesException the user preferences exception
+     */
     @PutMapping("/setUserPreferences")
     public String setUserPreferences(@RequestParam String username, @RequestBody UserPreferences userPreferences) throws UserNameException, UserPreferencesException {
         if(userPreferences == null) {

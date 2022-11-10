@@ -25,18 +25,33 @@ import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+/**
+ * The type Tour guide service.
+ */
 @Service
 public class TourGuideService {
 	private Logger logger = LoggerFactory.getLogger(TourGuideService.class);
 	private final GpsUtil gpsUtil;
 	private final RewardsService rewardsService;
 	private final TripPricer tripPricer = new TripPricer();
+	/**
+	 * The Tracker.
+	 */
 	public final Tracker tracker;
 	@Autowired
 	private RewardCentral rewardCentral;
 
+	/**
+	 * The Test mode.
+	 */
 	boolean testMode = true;
 
+	/**
+	 * Instantiates a new Tour guide service.
+	 *
+	 * @param gpsUtil        the gps util
+	 * @param rewardsService the rewards service
+	 */
 	public TourGuideService(GpsUtil gpsUtil, RewardsService rewardsService) {
 		this.gpsUtil = gpsUtil;
 		this.rewardsService = rewardsService;
@@ -50,32 +65,66 @@ public class TourGuideService {
 		tracker = new Tracker(this);
 		addShutDownHook();
 	}
-	
+
+	/**
+	 * Gets user rewards.
+	 *
+	 * @param user the user
+	 * @return the user rewards
+	 */
 	public List<UserReward> getUserRewards(User user) {
 		return user.getUserRewards();
 	}
-	
+
+	/**
+	 * Gets user location.
+	 *
+	 * @param user the user
+	 * @return the user location
+	 */
 	public VisitedLocation getUserLocation(User user) {
 		VisitedLocation visitedLocation = (user.getVisitedLocations().size() > 0) ?
 			user.getLastVisitedLocation() :
 			trackUserLocation(user);
 		return visitedLocation;
 	}
-	
+
+	/**
+	 * Gets user.
+	 *
+	 * @param userName the user name
+	 * @return the user
+	 */
 	public User getUser(String userName) {
 		return internalUserMap.get(userName);
 	}
-	
+
+	/**
+	 * Gets all users.
+	 *
+	 * @return the all users
+	 */
 	public List<User> getAllUsers() {
 		return internalUserMap.values().stream().collect(Collectors.toList());
 	}
-	
+
+	/**
+	 * Add user.
+	 *
+	 * @param user the user
+	 */
 	public void addUser(User user) {
 		if(!internalUserMap.containsKey(user.getUserName())) {
 			internalUserMap.put(user.getUserName(), user);
 		}
 	}
-	
+
+	/**
+	 * Gets trip deals.
+	 *
+	 * @param user the user
+	 * @return the trip deals
+	 */
 	public List<Provider> getTripDeals(User user) {
 		int cumulatativeRewardPoints = user.getUserRewards().stream().mapToInt(i -> i.getRewardPoints()).sum();
 		List<Provider> providers = tripPricer.getPrice(tripPricerApiKey, user.getUserId(), user.getUserPreferences().getNumberOfAdults(), 
@@ -83,7 +132,13 @@ public class TourGuideService {
 		user.setTripDeals(providers);
 		return providers;
 	}
-	
+
+	/**
+	 * Track user location visited location.
+	 *
+	 * @param user the user
+	 * @return the visited location
+	 */
 	public VisitedLocation trackUserLocation(User user) {
 //		VisitedLocation visitedLocation = gpsUtil.getUserLocation(user.getUserId());
 //		user.addToVisitedLocations(visitedLocation);
@@ -108,6 +163,12 @@ public class TourGuideService {
 	}
 
 
+	/**
+	 * Gets near by attractions.
+	 *
+	 * @param visitedLocation the visited location
+	 * @return the near by attractions
+	 */
 	public List<Attraction> getNearByAttractions(VisitedLocation visitedLocation) {
 		List<Attraction> nearbyAttractions = new ArrayList<>();
 		for (Attraction attraction : gpsUtil.getAttractions()) {
@@ -120,6 +181,12 @@ public class TourGuideService {
 	}
 
 
+	/**
+	 * Gets nearby attractions.
+	 *
+	 * @param visitedLocation the visited location
+	 * @return the nearby attractions
+	 */
 	public List<NearbyAttraction> getNearbyAttractions(VisitedLocation visitedLocation) {
 		List<NearbyAttraction> result = new ArrayList<>();
 		List<Attraction> fiveClosestAttractions = getFiveNearestAttraction(visitedLocation);
@@ -147,6 +214,11 @@ public class TourGuideService {
 		});
 	}
 
+	/**
+	 * Gets all current locations.
+	 *
+	 * @return the all current locations
+	 */
 	public Map<String, Location> getAllCurrentLocations() {
 		Map<String, Location> result = new HashMap<>();
 
@@ -157,6 +229,12 @@ public class TourGuideService {
 		return result;
 	}
 
+	/**
+	 * Get five nearest attraction list.
+	 *
+	 * @param visitedLocation the visited location
+	 * @return the list
+	 */
 	public List<Attraction> getFiveNearestAttraction(VisitedLocation visitedLocation){
 
 
@@ -195,6 +273,12 @@ public class TourGuideService {
 		});
 	}
 
+	/**
+	 * Check if user name exists boolean.
+	 *
+	 * @param username the username
+	 * @return the boolean
+	 */
 	public boolean checkIfUserNameExists(String username) {
 		return internalUserMap.containsKey(username) ? true : false;
 	}
